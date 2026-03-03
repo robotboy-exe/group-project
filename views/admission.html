@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Admissions | Maybach Academy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #fafcff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.5;
+      color: #1e2b3c;
+    }
+
+    /* main content width control */
+    .wrapper {
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    /* ----- HERO SECTION (ADMISSIONS) ----- */
+    .admin {
+      width: 100%;
+      max-width: 1400px;
+      min-height: 350px;
+      margin: 1.5rem auto 3rem auto;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+      background: linear-gradient(125deg, #e6f0fa, #ffffff, #fff2db);
+      border-radius: 60px 60px 30px 30px;
+      box-shadow: 0 18px 30px -10px rgba(0, 65, 100, 0.2);
+    }
+
+    .admin h1 {
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 700;
+      color: #0a3b5b;
+      letter-spacing: 2px;
+    }
+
+    .admin p {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: #1e4b6e;
+      max-width: 1000px;
+      font-weight: 400;
+    }
+
+    /* ----- JOIN COMMUNITY SECTION (image grid) ----- */
+    .join {
+      width: 100%;
+      max-width: 1400px;
+      margin: 2rem auto 4rem auto;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 25px 35px -12px rgba(0, 50, 80, 0.25);
+      padding: 2.5rem 2rem;
+    }
+
+    .join h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      text-align: center;
+      color: #1e7fb0;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .join-2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .img-card {
+      background: #d9eaf5;
+      border-radius: 30px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 12px 22px -10px rgba(0, 50, 60, 0.25);
+      transition: 0.3s ease;
+    }
+
+    .img-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 28px -8px #023b55;
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ----- CANDIDATE TRAITS (circles) ----- */
+    .candid {
+      width: 100%;
+      max-width: 1200px;
+      margin: 1rem auto 2rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 600;
+      text-align: center;
+      color: #0a3955;
+      line-height: 1.3;
+    }
+
+    .candid p {
+      background: rgba(255,255,240,0.6);
+      padding: 1rem 2rem;
+      border-radius: 80px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+    }
+
+    .circle-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem 3rem;
+      max-width: 1300px;
+      margin: 2rem auto 3rem;
+      padding: 1rem;
+    }
+
+    .circle-item {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: #0f78b6; /* fallback */
+      background: radial-gradient(circle at 30% 30%, #2593d9, #0b5f94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.8rem;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 500;
+      box-shadow: 0 18px 30px -5px #0a3b5b;
+      transition: all 0.25s;
+      line-height: 1.5;
+      box-shadow: 0 15px 25px -6px #04384e;
+    }
+
+    .circle-item:hover {
+      transform: scale(1.02);
+      background: radial-gradient(circle at 30% 30%, #2d9ee5, #0c5280);
+      box-shadow: 0 25px 35px -8px #022b40;
+    }
+
+    /* fix duplicate circle-4 (both same style) */
+    /* all circles share same class now, no need for duplicates */
+
+    /* ----- READY TO APPLY / STEPS SECTION ----- */
+    .ready {
+      width: 100%;
+      text-align: center;
+      margin: 4rem 0 2rem;
+    }
+
+    .ready h1 {
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      color: #173e5c;
+      font-weight: 700;
+    }
+
+    .ready p {
+      font-size: 2rem;
+      color: #2f6690;
+      margin-top: 0.5rem;
+    }
+
+    .steps-wrapper {
+      max-width: 1300px;
+      width: 100%;
+      margin: 2rem auto 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 0.5rem;
+    }
+
+    .step-card {
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 280px;
+      background: white;
+      border-radius: 40px 12px 40px 12px;
+      box-shadow: 0 15px 28px -12px #103d56;
+      padding: 0 0 1.5rem 0;
+      transition: 0.2s;
+      border: 1px solid rgba(135, 206, 250, 0.3);
+    }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 35px -14px #0e3142;
+    }
+
+    .step-number {
+      background: #0b4d73;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: monospace;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 40px 0;
+      margin-bottom: 1rem;
+    }
+
+    .step-content {
+      padding: 0 1.2rem 1rem;
+      font-size: 1.15rem;
+      color: #152f40;
+    }
+
+    .step-content a {
+      color: #1d87c7;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+    }
+
+    .step-content a:hover {
+      color: #0b4d73;
+    }
+
+    .step-arrow {
+      font-size: 2.5rem;
+      color: #1771a5;
+      align-self: center;
+      margin: 0 0.2rem;
+      opacity: 0.7;
+    }
+
+    /* hide old greater-than icons, we use arrows between cards */
+    /* but keep them visible on wider screens only */
+    .desktop-arrow {
+      display: flex;
+      align-items: center;
+      font-size: 2.5rem;
+      color: #20668f;
+      margin: 0 -0.5rem;
+    }
+
+    /* for small screens we hide arrows */
+    @media (max-width: 950px) {
+      .desktop-arrow {
+        display: none;
+      }
+    }
+
+    /* ----- TUITION SECTION ----- */
+    .tuition {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      margin: 3rem auto 5rem;
+      background: white;
+      border-radius: 80px 20px 80px 20px;
+      box-shadow: 0 30px 40px -18px #082a3a;
+      padding: 3rem 2rem;
+    }
+
+    .tuition-img {
+      flex: 1 1 400px;
+      min-width: 300px;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 28px -14px #11384b;
+    }
+
+    .tuition-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s;
+    }
+
+    .tuition-img img:hover {
+      transform: scale(1.02);
+    }
+
+    .tuition-info {
+      flex: 1 1 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .tuition-info h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: #083a57;
+      border-left: 10px solid #3fa2dd;
+      padding-left: 1.5rem;
+    }
+
+    .tuition-info p {
+      font-size: 1.2rem;
+      color: #1b3c50;
+      line-height: 1.7;
+      max-width: 750px;
+    }
+
+    .apply-btn {
+      background: #0f6b9e;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding: 0.8rem 2.5rem;
+      border: none;
+      border-radius: 60px;
+      width: fit-content;
+      cursor: pointer;
+      box-shadow: 0 12px 18px -8px #023248;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .apply-btn:hover {
+      background: #1d5496;
+      transform: scale(1.03);
+      box-shadow: 0 20px 28px -8px #021d2b;
+    }
+
+    /* ----- RESPONSIVE TWEAKS ----- */
+    @media (max-width: 900px) {
+      .join-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .circle-container {
+        gap: 1.5rem;
+      }
+      .circle-item {
+        width: 230px;
+        height: 230px;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .join-2 {
+        grid-template-columns: 1fr;
+      }
+      .circle-item {
+        width: 200px;
+        height: 200px;
+        font-size: 1rem;
+      }
+      .tuition {
+        padding: 2rem 1.2rem;
+      }
+      .admin {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* remove extra old positioning */
+    body > * {
+      width: 95%;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* fix for last circle (was missing background) – now all circles unified */
+    /* also remove redundant circle-b, circle-a etc – we use flex container */
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <div class="admin">
+    <h1>ADMISSIONS</h1>
+    <p>Is Maybach Academy the right fit for you or your child? Please review the information on this page to find out what qualifies an appropriate candidate for Maybach Academy.</p>
+  </div>
+
+  <!-- JOIN COMMUNITY (image grid) -->
+  <section class="join">
+    <h1>JOIN OUR COMMUNITY</h1>
+    <div class="join-2">
+      <div class="img-card"><img src="/public/images/kids1.jpg" alt="happy student"></div>
+      <div class="img-card"><img src="/public/images/kids2.jpg" alt="students learning"></div>
+      <div class="img-card"><img src="/public/images/Stud7.jpg" alt="classroom activity"></div>
+      <div class="img-card"><img src="/public/images/kids4.jpg" alt="group work"></div>
+    </div>
+  </section>
+
+  <!-- CANDIDATE TRAITS (circles) -->
+  <div class="candid">
+    <p>Appropriate candidates for Maybach Academy exhibit the following characteristics:</p>
+  </div>
+
+  <div class="circle-container">
+    <div class="circle-item">Diagnosis of cognitive delay or developmental disability (low to low-average IQ)</div>
+    <div class="circle-item">No history of significant behavioral or psychological disorders</div>
+    <div class="circle-item">Basic verbal skills or ability to use alternate communication device or strategy independently</div>
+    <div class="circle-item">Ability to work within a small group and to transition between school and community activities</div>
+    <div class="circle-item">Motivated to work hard towards a goal of independence</div>
+    <div class="circle-item">Family network committed to working with the school</div>
+  </div>
+
+  <!-- STEPS SECTION -->
+  <div class="ready">
+    <h1>Ready to Apply?</h1>
+    <p>Just follow these steps!</p>
+  </div>
+
+  <!-- step cards with arrows for larger screens -->
+  <div class="steps-wrapper">
+    <!-- step 1 -->
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        Complete the online information request. To get started, please <a href="#">Click here</a>.
+      </div>
+    </div>
+    <span class="desktop-arrow"><i class="fas fa-arrow-right"></i></span>
+
+    <!-- step 2 -->
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        Schedule a tour — use the link provided in your email or the <a href="#">Admissions Portal</a>.
+      </div>
+    </div>
+    <span class="desktop-arrow"><i class="fas fa-arrow-right"></i></span>
+
+    <!-- step 3 -->
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        Complete the Application Checklist in the <a href="#">Portal</a>.
+      </div>
+    </div>
+    <span class="desktop-arrow"><i class="fas fa-arrow-right"></i></span>
+
+    <!-- step 4 -->
+    <div class="step-card">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        A student visit and placement assessment will be scheduled after the application has been reviewed.
+      </div>
+    </div>
+  </div>
+
+  <!-- TUITION SECTION -->
+  <div class="tuition">
+    <div class="tuition-img">
+      <img src="/public/images/imagexxx.jpg" alt="campus scene">
+    </div>
+    <div class="tuition-info">
+      <h2>Tuition Information</h2>
+      <p>
+        Tuition to Maybach Academy is $25,100 for Middle and High School students. State grants from $9,000-$24,000 are available for special needs students to help cover tuition. <br><br>
+        The Post-Secondary Bridges program for young adults has a half day option starting at $11,000. <br><br>
+        Payment plans, scholarships and discounts are available. Limited need-based financial aid is available. Eligibility is determined by the FACTS Grant and Aid Assessment Program. <br><br>
+        Maybach Academy does not discriminate on the basis of race, color, gender, religious, ethnic or national origin in the administration of its educational programs, admissions policies, financial aid policies, or employment practices.
+      </p>
+      <a href="#" class="apply-btn">APPLY NOW</a>
+    </div>
+  </div>
+
+  <!-- no scripts, no live reload -->
+</body>
+</html>

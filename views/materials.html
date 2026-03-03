@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materials</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        background-color: #f4f6f9;
+        color: #1e293b;
+        line-height: 1.5;
+      }
+
+      .dashboard {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        background: linear-gradient(180deg, #0a1929 0%, #0f2a3f 100%);
+        color: #e0e7ff;
+        padding: 2rem 1.5rem;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: white;
+        letter-spacing: -0.02em;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 0.5rem;
+      }
+
+      .nav-links {
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #cbd5e1;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .nav-links a:hover {
+        background-color: #1e3a5f;
+        color: white;
+        transform: translateX(4px);
+      }
+
+      /* Main content */
+      .main-content {
+        flex: 1;
+        padding: 2rem 2.5rem;
+        background-color: #f8fafc;
+      }
+
+      .main-content h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #0a1929, #1e4b6e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Material cards */
+      .material-card {
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border-left: 4px solid #3b82f6;
+      }
+
+      .material-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      }
+
+      .material-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .material-card a {
+        display: inline-block;
+        padding: 0.5rem 1.2rem;
+        background: linear-gradient(to right, #1e3a5f, #1e4b6e);
+        color: white;
+        text-decoration: none;
+        border-radius: 2rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .material-card a:hover {
+        background: linear-gradient(to right, #0f2a3f, #163a4f);
+        transform: scale(1.02);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .dashboard {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          padding: 1rem;
+        }
+        .main-content {
+          padding: 1.5rem;
+        }
+        .material-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <h2>Student Portal</h2>
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="materials.html">Materials</a></li>
+          <li><a href="grades.html">Grades</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="logout">Logout</a></li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <h1>Course Materials</h1>
+
+        <div class="material-card">
+          <h3>HTML Lecture Notes</h3>
+          <a href="#">Download PDF</a>
+        </div>
+
+        <div class="material-card">
+          <h3>JavaScript Basics</h3>
+          <a href="#">Download PDF</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Working Responsive Photo Scrollbar</title>
+<style>
+  :root{ --gap:16px; --item-w:420px; --item-h:320px; }
+  html,body{ height:100%; margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:#c3c9cf; color:#062037;}
+  .wrap{ max-width:1200px; margin:28px auto; padding:16px; position:relative; }
+
+  /* Scroll area */
+  .photo-scroll{
+    display:flex;
+    gap:var(--gap);
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:12px;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch; /* smooth on iOS */
+    touch-action: pan-x; /* allow horizontal panning */
+  }
+  .photo-scroll::-webkit-scrollbar{ height:8px; }
+  .photo-scroll::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.15); border-radius:8px; }
+
+  /* Items */
+  .photo-item{
+    flex: 0 0 var(--item-w);
+    height: var(--item-h);
+    border-radius:12px;
+    overflow:hidden;
+    background:#000;
+    box-shadow:0 8px 22px rgba(6,32,55,.08);
+    position:relative;
+  }
+  .photo-item img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    -webkit-user-drag: none; user-drag: none; /* hint for browsers */
+  }
+
+  /* Caption below each item */
+  .card{
+    display:flex; flex-direction:column; gap:8px; align-items:center;
+    min-width: var(--item-w);
+  }
+  .caption{ font-weight:600; color:#054; font-size:14px; text-align:center; }
+
+  /* Buttons */
+  .btn{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    width:48px; height:48px;
+    background: #fff; border-radius:50%;
+    display:grid; place-items:center;
+    box-shadow:0 6px 18px rgba(6,32,55,.12);
+    cursor:pointer; user-select:none;
+  }
+  .btn.left{ left:-10px; }
+  .btn.right{ right:-10px; }
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+    background:rgba(0,0,0,.82); z-index:2000;
+  }
+  .lightbox img{ max-width:94%; max-height:92%; border-radius:10px; box-shadow:0 12px 40px rgba(0,0,0,.6); }
+
+  /* Responsive tweaks */
+  @media (max-width:900px){
+    :root{ --item-w:320px; --item-h:240px; --gap:12px; }
+    .btn.left{ left:6px; } .btn.right{ right:6px; }
+  }
+  @media (max-width:520px){
+    :root{ --item-w:260px; --item-h:200px; }
+  }
+
+  .logo{
+    /* width: 200px; */
+    /* height: 200px; */
+    /* background-color: red; */
+    align-self: center;
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo"><img src="/public/images/mmglogo.png" style="height: 150px;" alt="Maybach Academy logo"/></div>
+    <h2 style="margin:0 0 12px 6px">ENJOY OUR GALLERY VIEWS</h2>
+
+    <div class="btn left" id="btnLeft" aria-label="scroll left">&#8249;</div>
+    <div class="btn right" id="btnRight" aria-label="scroll right">&#8250;</div>
+
+    <div class="photo-scroll" id="scroll" tabindex="0" role="list" aria-label="photo list">
+      <!-- Add your images manually here (up to 20) -->
+      <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids1.jpg" alt="Photo 1" draggable="false"></div>
+        <div class="caption">Recreation Session</div>
+      </div>
+
+      <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids2.jpg" alt="Photo 2" draggable="false"></div>
+        <div class="caption">Sharing Ideas</div>
+      </div>
+
+      <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids3.jpg" alt="Photo 3" draggable="false"></div>
+        <div class="caption">Smiles</div>
+      </div>
+
+      <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids4.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Elegant Kids</div>
+      </div>
+
+       <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids6.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Boarding</div>
+      </div>
+
+       <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/bus7.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 6</div>
+      </div>
+
+       <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/bus8.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 7</div>
+      </div>
+
+       <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/kids4.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 8</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud2.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 9</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud3.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 10</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud4.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 11</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud5.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 12</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud6.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 13</div>
+      </div>
+
+        <div class="card" role="listitem">
+        <div class="photo-item"><img src="/public/images/Stud7.jpg" alt="Photo 4" draggable="false"></div>
+        <div class="caption">Photo 14</div>
+      </div>
+
+      <!-- ... add more up to 20 ... -->
+    </div>
+
+    <!-- <p style="color:#235; margin-top:14px; font-size:14px">Tip: on mobile use swipe; on desktop drag the strip or use the arrows.</p> -->
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <img id="lightboxImg" alt="Enlarged photo">
+  </div>
+
+<script>
+  // BASIC NAV BUTTONS
+  const scrollEl = document.getElementById('scroll');
+  const btnLeft = document.getElementById('btnLeft');
+  const btnRight = document.getElementById('btnRight');
+
+  btnLeft.addEventListener('click', ()=> scrollEl.scrollBy({ left: -480, behavior:'smooth' }));
+  btnRight.addEventListener('click', ()=> scrollEl.scrollBy({ left: 480, behavior:'smooth' }));
+
+  // Prevent native image drag (some browsers still allow it)
+  document.querySelectorAll('.photo-item img').forEach(img=>{
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+
+  // MOUSE DRAG (desktop) — use pointer events, only when pointerType is mouse so touch is native
+  let isDragging = false;
+  let startX = 0;
+  let startScroll = 0;
+
+  scrollEl.addEventListener('pointerdown', (e) => {
+    // Only intercept mouse drag; leave touch to native scrolling
+    if (e.pointerType !== 'mouse') return;
+    isDragging = true;
+    scrollEl.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    startScroll = scrollEl.scrollLeft;
+    scrollEl.classList.add('dragging'); // class for cursor style if wanted
+  });
+
+  scrollEl.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    // compute and move (reduced multiplier for slower scroll)
+    const dx = e.clientX - startX;
+    scrollEl.scrollLeft = startScroll - dx * 0.45; // 0.45 slow factor
+  });
+
+  const stopDrag = (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    try { scrollEl.releasePointerCapture(e.pointerId); } catch(_) {}
+    scrollEl.classList.remove('dragging');
+  };
+
+  scrollEl.addEventListener('pointerup', stopDrag);
+  scrollEl.addEventListener('pointercancel', stopDrag);
+  scrollEl.addEventListener('pointerleave', stopDrag);
+
+  // LIGHTBOX — opens when clicking the image
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  document.querySelectorAll('.photo-item img').forEach(img=>{
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      lightbox.setAttribute('aria-hidden','false');
+    });
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    // close when clicking outside or on image area
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden','true');
+    lightboxImg.src = '';
+  });
+
+  // OPTIONAL: keyboard navigation
+  scrollEl.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') scrollEl.scrollBy({left:-300, behavior:'smooth'});
+    if (e.key === 'ArrowRight') scrollEl.scrollBy({left:300, behavior:'smooth'});
+    if (e.key === 'Home') scrollEl.scrollTo({left:0, behavior:'smooth'});
+    if (e.key === 'End') scrollEl.scrollTo({left: scrollEl.scrollWidth, behavior:'smooth'});
+    if (e.key === 'Escape') { lightbox.style.display='none'; }
+  });
+
+  // DEBUG helper: if still not scrolling for you, run this in the console:
+  // console.log(scrollEl.scrollWidth, scrollEl.clientWidth)
+  // if scrollWidth <= clientWidth there is nothing to scroll (items fit in the viewport)
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Submitted</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+        background-color: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+
+      .success-container .card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 0.625rem;
+        width: 90%;
+        max-width: 30rem;
+        text-align: center;
+        box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
+      }
+
+      .status {
+        margin: 1.25rem 0;
+        padding: 0.625rem;
+        background: #fff3cd;
+        border-radius: 0.375rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.625rem 1.25rem;
+        background: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.375rem;
+        transition: background 0.2s;
+      }
+
+      .btn:hover {
+        background: #1a252f;
+      }
+
+      @media (max-width: 30rem) {
+        .success-container .card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-container">
+      <div class="card">
+        <h1>✓ Application Submitted</h1>
+        <p>
+          Congratulations! Your admission application has been successfully
+          submitted.
+        </p>
+        <p>A student account has been created for you.</p>
+        <div class="status">
+          Status: <strong>Pending Admin Approval</strong>
+        </div>
+        <a href="login.html" class="btn">Go to Login</a>
+      </div>
+    </div>
+  </body>
+</html>
