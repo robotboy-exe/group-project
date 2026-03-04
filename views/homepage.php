@@ -265,7 +265,7 @@
 
       .contain img {
         width: 100%;
-        height: 35vh;
+        height: 45vh;
         max-height: 320px;
         object-fit: cover;
       }
