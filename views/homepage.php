@@ -280,7 +280,7 @@
         flex-direction: column;
         align-items: center;
         padding: 100px 20px;
-        background-image: url(/public/images/picx.jpg);
+        background-image: url(../public/images/picx.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -938,7 +938,7 @@
   <body>
     <header class="site-header">
       <a href="#" class="brand">
-        <img src="/public/images/mmglogo.png" alt="Maybach Academy logo" />
+        <img src="../public/images/mmglogo.png" alt="Maybach Academy logo" />
         <div>
           <h1 class="title">MAY<span>BACH</span> ACADEMY</h1>
           <span class="sub-title">Excellence • Integrity • Community</span>
@@ -991,7 +991,7 @@
     </div>
 
     <div class="cont">
-      <img src="/public/images/kids3.jpg" alt="Photo" />
+      <img src="../public/images/kids3.jpg" alt="Photo" />
       <div class="text">
         <h2>A Community of Learning <br />Unlike Any Other</h2>
         <h3>
@@ -1004,7 +1004,7 @@
 
     <div class="contain">
       <div class="contain-1">
-        <img src="/public/images/kids4.jpg" alt="" />
+        <img src="../public/images/kids4.jpg" alt="" />
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
           eaque, incidunt cupiditate, perspiciatis porro beatae suscipit
@@ -1014,7 +1014,7 @@
       </div>
 
       <div class="contain-2">
-        <img src="/public/images/kids1.jpg" alt="" />
+        <img src="../public/images/kids1.jpg" alt="" />
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
           eaque, incidunt cupiditate, perspiciatis porro beatae suscipit
@@ -1045,7 +1045,7 @@
 
     <div class="card">
       <div class="card-1">
-        <img src="/public/images/rempic.png" alt="" />
+        <img src="../public/images/rempic.png" alt="" />
         <h2>88% Student Employment <br />Rate</h2>
         <p>
           The primary focus of Maybach Academy is to make sure our students have
@@ -1057,7 +1057,7 @@
       </div>
 
       <div class="card-2">
-        <img src="/public/images/respic.jpg" alt="" />
+        <img src="../public/images/respic.jpg" alt="" />
         <h2>6:1 Student to Teacher <br />Ratio</h2>
         <p>
           We ensure small class size which allows each student the attention
@@ -1070,7 +1070,7 @@
       </div>
 
       <div class="card-3">
-        <img src="/public/images/shakepic.jpg" alt="" />
+        <img src="../public/images/shakepic.jpg" alt="" />
         <h2>Partnership With Global <br />Employers</h2>
         <p>
           We partner with employers from all over the world to deliver hands-on
@@ -1085,7 +1085,7 @@
 
     <div class="unique">
       <div class="src">
-        <img src="/public/images/kids3.jpg" alt="" />
+        <img src="../public/images/kids3.jpg" alt="" />
       </div>
 
       <div class="learn">
@@ -1095,7 +1095,7 @@
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             Students are provided with hands-on learning using specialized
             curriculum
@@ -1103,7 +1103,7 @@
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             Students are taught life and social skills integrated into the
             classroom
@@ -1111,7 +1111,7 @@
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             Students are taught work skills through job training experiences in
             the community
@@ -1119,7 +1119,7 @@
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             Students are matched with internships based on their interests and
             abilities
@@ -1127,14 +1127,14 @@
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             Bridges Program provides transition from high school to adulthood
           </p>
         </div>
 
         <div class="src2">
-          <img src="/public/images/done2.png" alt="" />
+          <img src="../public/images/done2.png" alt="" />
           <p>
             An individualized learning and transition plan is developed for
             every student
@@ -1148,7 +1148,9 @@
     <div class="youtube">
       <h1>Meet Our Students</h1>
       <video controls class="responsive-video">
-        <source src="/public/videos/WhatsApp Video 2025-11-27 at 3.29.50 PM.mp4" />
+        <source
+          src="../public/videos/WhatsApp Video 2025-11-27 at 3.29.50 PM.mp4"
+        />
       </video>
       <p>
         Our students are what makes the Maybach Academy community great. We take
@@ -1164,14 +1166,14 @@
     </div>
     <div class="pixs">
       <div class="pic1">
-        <img src="/public/images/kids6.jpg" />
+        <img src="../public/images/kids6.jpg" />
       </div>
 
       <div class="pic2">
-        <img src="/public/images/bus7.jpg" />
+        <img src="../public/images/bus7.jpg" />
       </div>
       <div class="pic3">
-        <img src="/public/images/bus8.jpg" />
+        <img src="../public/images/bus8.jpg" />
       </div>
     </div>
 
@@ -1272,88 +1274,7 @@
       <a href="contact.html"><h2>CONTACT US TODAY</h2></a>
     </div>
 
-    <footer>
-      <div class="footer-container">
-        <!-- School Logo + Short Description -->
-        <div class="footer-logo">
-          <img src="/public/images/mmglogo.png" alt="School Logo" />
-          <h2>Maybach Academy</h2>
-          <p>Excellence * Integrity * Community</p>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-contact">
-          <h3>Contact Us</h3>
-          <p>Phone: +234 802 416 4468</p>
-          <p>Email: info@maybachacademy.com</p>
-          <p>Address: No. 15 Ihama Road, Benin City, Edo State.</p>
-        </div>
-
-        <!-- Social Media -->
-        <div class="footer-social">
-          <h3>Connect With Us</h3>
-          <ul>
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Legal & Policies -->
-        <div class="footer-legal">
-          <h3>Legal</h3>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Disclaimer</a></li>
-          </ul>
-        </div>
-
-        <!-- Date / Time -->
-        <div class="footer-date">
-          <h3>System Time</h3>
-          <p id="date"></p>
-          <p id="time"></p>
-          <p id="year"></p>
-        </div>
-
-        <!-- Google Map -->
-        <!-- <div class="footer-map">
-            <h3>Our Location</h3>
-            <iframe 
-                src="https://maps.app.goo.gl/d655fV3iBw1YHsQe7"
-                loading="lazy">
-            </iframe>
-        </div> -->
-      </div>
-
-      <div class="footer-bottom">
-        <h3>NOTICE OF NONDISCRIMINATORY POLICY AS TO STUDENTS</h3>
-        <br />
-        <p>
-          Maybach Academy admits students of any race, color, national and
-          ethnic origin to all the rights, privileges, programs, and activities
-          generally accorded or made available to students at the school. It
-          does not discriminate on the basis of race, color, national and ethnic
-          origin in administration of its educational policies, admissions
-          policies, scholarship and loan programs, and athletic and other
-          school-administered programs.
-        </p>
-        <br />
-        <p>
-          © <span id="copyYear"></span> Maybach Academy — All Rights Reserved.
-        </p>
-      </div>
-    </footer>
+<?php require_once "../includes/footer.php"; ?>
 
     <script>
       (function () {
