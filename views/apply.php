@@ -4,25 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADMISSION FORM PAGE</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
     <style>
       body {
         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
         background-color: #f4f6f9;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+        flex-direction: column;   /* stack children vertically */
+        min-height: 100vh;        /* full viewport height */
         margin: 0;
-        padding: 1rem;
+        padding: 0;
         box-sizing: border-box;
       }
 
+/* All your existing fieldset, form-row, etc. styles remain unchanged below */      
       #register-card {
         background: white;
         border-radius: 0.625rem; /* 10px */
         box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 60rem; /* narrower than before */
+        margin: auto;             /* centers the card vertically & horizontally */
         overflow: hidden;
       }
 
@@ -410,6 +412,11 @@
 
           <fieldset>
             <legend>ACCOUNT CREATION</legend>
+<div class="field-group full">
+  <label for="account-email">Account Email (read-only):</label>
+  <input type="email" id="account-email" name="account-email" disabled />
+</div>
+            
             <div class="field-group">
               <label for="password">Create Password:</label>
               <input type="password" id="password" name="password" required />
@@ -424,6 +431,8 @@
         </form>
       </div>
     </div>
+
+    <?php require_once "../includes/footer.php"; ?>
 
     <script>
       const password = document.getElementById("password");
@@ -440,6 +449,17 @@
           message.className = "success";
         }
       }
+
+      // Mirror email from Contact Information to Account Creation
+const emailField = document.getElementById('email');
+const accountEmailField = document.getElementById('account-email');
+
+function mirrorEmail() {
+  accountEmailField.value = emailField.value;
+}
+
+emailField.addEventListener('input', mirrorEmail);
+window.addEventListener('load', mirrorEmail);
 
       password.addEventListener("input", updateMessage);
       confirm.addEventListener("input", updateMessage);

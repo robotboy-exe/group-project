@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
     <style>
       body {
         font-family:
@@ -16,11 +17,12 @@
           Arial;
         background-color: #f4f6f9;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         margin: 0;
-        padding: 1rem;
+        /* padding: 1rem; */
         box-sizing: border-box;
       }
 
@@ -154,5 +156,8 @@
         </form>
       </div>
     </div>
+
+    <?php require_once "../includes/footer.php"; ?>
+
   </body>
 </html>
