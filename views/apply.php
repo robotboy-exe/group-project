@@ -25,7 +25,7 @@
         width: 100%;
         max-width: 60rem; /* narrower than before */
         margin: auto;             /* centers the card vertically & horizontally */
-        overflow: hidden;
+    overflow: hidden;
       }
 
       #form-header {
