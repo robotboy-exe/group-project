@@ -291,7 +291,15 @@
       <div id="form-body">
         <h1 class="form-title">Admission Form</h1>
 
-        <form action="" method="post" id="apply-form">
+<?php
+if (isset($_GET['error']) && $_GET['error'] === 'email_exists') {
+    echo "<div style="background:#ffe5e5;padding:10px;border-radius:5px;color:#b30000;">
+An application with this email already exists.
+</div>";
+}
+?>
+
+        <form action="../controllers/process_application.php" method="post" id="apply-form">
           <div class="form-row">
             <p class="desc">
               This is where you will fill in your information before proceeding

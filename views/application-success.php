@@ -75,7 +75,7 @@
         <div class="status">
           Status: <strong>Pending Admin Approval</strong>
         </div>
-        <a href="login.html" class="btn">Go to Login</a>
+        <a href="login.php" class="btn">Go to Login</a>
       </div>
     </div>
   </body>

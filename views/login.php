@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// If already logged in, redirect based on type
+if (isset($_SESSION['user_id'])) {
+    if ($_SESSION['user_type'] === 'student') {
+        header("Location: student-dashboard.php");
+        exit();
+    } elseif ($_SESSION['user_type'] === 'admin') {
+        header("Location: admin-dashboard.php");
+        exit();
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -140,7 +155,8 @@
     <div id="form-body">
       <h1 class="form-title">LOGIN</h1>
       <p class="desc">Please fill in your credentials to login</p>
-      <form action="" method="post">
+
+      <form action="../controllers/login_process.php" method="post">
         <div class="field-group">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
@@ -154,12 +170,19 @@
           <select name="userType" id="userType" required>
             <option value="">Select User Type</option>
             <option value="student">Current Student</option>
-            <option value="parent">Prospective Student</option>
-            <option value="teacher">Admin</option>
+            <option value="admin">Admin</option>
           </select>
         </div>
         <button type="submit">LOGIN</button>
       </form>
+
+<?php
+    if (isset($_SESSION['login_error'])) {
+        echo '<p style="color:red; margin-top:10px;">'.$_SESSION['login_error'].'</p>';
+        unset($_SESSION['login_error']); // clear after showing
+    }
+    ?>
+
     </div>
   </div>
 
