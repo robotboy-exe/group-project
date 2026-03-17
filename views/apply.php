@@ -307,13 +307,12 @@
     <div id="form-body">
       <h1 class="form-title">Admission Form</h1>
 
-      <?php
-      if (isset($_GET['error']) && $_GET['error'] === 'email_exists') {
-        echo '<div style="background:#ffe5e5;padding:10px;border-radius:5px;color:#b30000;">
-    An application with this email already exists.
-    </div>';
-      }
-      ?>
+      <?php if (isset($_GET['error']) && $_GET['error'] === 'email_exists'): ?>
+        <div style="background:#ffe5e5;padding:10px;border-radius:5px;color:#b30000;">
+          An application with this email already exists.
+        </div>
+      <?php endif; ?>
+
 
       <form action="../controllers/process_application.php" method="post" id="apply-form">
         <div class="form-row">
