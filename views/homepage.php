@@ -993,10 +993,10 @@
 
         <li><a href="./contact.html">CONTACT</a></li>
         <li><a href="./admission.html">ADMISSIONS</a></li>
-        <li><a href="./login.html">SIGN IN</a></li>
+        <li><a href="./login.php">SIGN IN</a></li>
 
         <li class="mobile-apply">
-          <a href="./apply.html" class="cta">APPLY</a>
+          <a href="./apply.php" class="cta">APPLY</a>
         </li>
       </ul>
     </nav>
