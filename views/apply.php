@@ -457,6 +457,8 @@
 
   <?php require_once "../includes/footer.php"; ?>
 
+<script src="../public/js/app.js"></script>
+
   <script>
     const password = document.getElementById("password");
     const confirm = document.getElementById("confirm-password");
