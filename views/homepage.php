@@ -1286,6 +1286,8 @@
   </div>
 
   <?php require_once "../includes/footer.php"; ?>
+  
+  <script src="../public/js/app.js"></script>
 
   <script>
     (function() {
